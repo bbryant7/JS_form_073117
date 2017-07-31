@@ -113,6 +113,7 @@ for (var i = 0; i < formData.length; i++) {
 
   else if (formData[i].type === 'select'){
     let select = document.createElement('select');
+    select.innerHTML = '<option value="" disabled selected hidden>Select language...</option>';
     formHTML.appendChild(select);
     select.setAttribute('type', formData[i].type);
     select.setAttribute('placeholder', formData[i].label);
@@ -126,6 +127,7 @@ for (var i = 0; i < formData.length; i++) {
         select.appendChild(option);
         option.setAttribute('value', selectOptions[b].value);
         option.setAttribute('label',  selectOptions[b].label);
+
 
     }
 }

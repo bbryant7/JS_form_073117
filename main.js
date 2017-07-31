@@ -100,15 +100,48 @@ let formData = [
 let formHTML = document.getElementById ('fields');
 
 for (var i = 0; i < formData.length; i++) {
-  let input = document.createElement('input');
-  formHTML.appendChild(input);
-  input.setAttribute('type', formData[i].type);
-  input.setAttribute('placeholder', formData[i].label);
-  input.setAttribute('id', formData[i].id);
-  input.setAttribute('icon', formData[i].icon);
-  input.setAttribute('option', formData[i].option);
-}
+  if (formData[i].type === 'textarea'){
+    let textArea = document.createElement('textarea');
+    formHTML.appendChild(textArea);
+    textArea.setAttribute('type', formData[i].type);
+    textArea.setAttribute('placeholder', formData[i].label);
+    textArea.setAttribute('id', formData[i].id);
+    textArea.setAttribute('icon', formData[i].icon);
+    textArea.setAttribute('cols','30');
+    textArea.setAttribute('rows','30');
+  }
 
-let textBox = document.getElementById('user-comment');
-textBox.setAttribute('cols','300');
-textBox.setAttribute('rows','300');
+  else if (formData[i].type === 'select'){
+    let select = document.createElement('select');
+    formHTML.appendChild(select);
+    select.setAttribute('type', formData[i].type);
+    select.setAttribute('placeholder', formData[i].label);
+    select.setAttribute('id', formData[i].id);
+    select.setAttribute('icon', formData[i].icon);
+    select.setAttribute('options', formData[i].option);
+
+    for (var i = 0; i < formData.option.length; i++) {
+
+      let option = document.createElement('option');
+      select.appendChild(option);
+      option.setAttribute('value',formData[i].option);
+}
+  }
+
+  else {
+    let input = document.createElement('input');
+    formHTML.appendChild(input);
+    input.setAttribute('type', formData[i].type);
+    input.setAttribute('placeholder', formData[i].label);
+    input.setAttribute('id', formData[i].id);
+    input.setAttribute('icon', formData[i].icon);
+    // input.setAttribute('option', formData[i].option);
+
+  }
+  }
+
+
+
+
+
+// 

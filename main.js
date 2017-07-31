@@ -120,14 +120,8 @@ for (var i = 0; i < formData.length; i++) {
     select.setAttribute('icon', formData[i].icon);
     select.setAttribute('options', formData[i].option);
 
-    for (var i = 0; i < formData.option.length; i++) {
 
-      let option = document.createElement('option');
-      select.appendChild(option);
-      option.setAttribute('value',formData[i].option);
 }
-  }
-
   else {
     let input = document.createElement('input');
     formHTML.appendChild(input);
@@ -135,13 +129,17 @@ for (var i = 0; i < formData.length; i++) {
     input.setAttribute('placeholder', formData[i].label);
     input.setAttribute('id', formData[i].id);
     input.setAttribute('icon', formData[i].icon);
-    // input.setAttribute('option', formData[i].option);
 
   }
   }
 
 
+  // WORKING ON FORM OPTIONS DOWN HERE :). Trying to make this for loop situation work
 
-
-
-// 
+//   for (var i = 0; i < sectionOptions.length; i++) {
+//     let option = document.createElement('option');
+//     select.appendChild(option);
+//     option.setAttribute('value',formData[i].option);
+//     option.setAttribute('label', formData[i].option);
+//
+// }
